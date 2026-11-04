@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="./Public/CSS/Styles.css">
+<link rel="icon" href="https://raw.githubusercontent.com/JeanPCarrilloG/JeanPCarrilloG/main/ICONS/icons8-blog.png">
+</head>
+<body>
+<div class="LoginContainer">
+  <img src="https://raw.githubusercontent.com/JeanPCarrilloG/JeanPCarrilloG/main/ICONS/icons8-blog.png" width="48" alt="logo">
+  <h2>ANONYMOUS DIARY</h2>
+  <small style="color:#999">API never stored. Age and terms asked only once at user creation.</small>
+
+  <div style="display:flex;gap:8px;margin-top:16px">
+    <button id="tabLoginBtn" class="PrimaryButton" style="flex:1">Login</button>
+    <button id="tabCreateBtn" class="SecondaryButton" style="flex:1">Create User</button>
+  </div>
+
+  <!-- LOGIN PANEL - FIRST - NO DROPDOWN -->
+  <div id="loginPanel" style="margin-top:16px">
+    <h4>Login</h4>
+    <label style="display:block;margin-top:12px">Nick (exact as created, case insensitive)</label>
+    <input id="loginNickInput" class="LoginInput" placeholder="Type your exact nick" maxlength="20">
+
+    <label style="display:block;margin-top:12px">API Key (same as when you created the section, always required, never stored)</label>
+    <input id="loginApiInput" class="LoginInput" type="password" placeholder="Enter same API key">
+
+    <button id="loginBtn" class="PrimaryButton" style="width:100%;margin-top:12px">Login</button>
+    <p id="loginError" style="color:#ef4444;font-size:.85rem;display:none;margin-top:8px"></p>
+    <p style="font-size:.75rem;color:#999;margin-top:8px">Type nick exactly as created. API must be same as at creation. No dropdown, nick only.</p>
+  </div>
+
+  <!-- CREATE USER PANEL - SECOND -->
+  <div id="createPanel" style="margin-top:16px;display:none">
+    <h4>Create New User</h4>
+    <label style="display:block;margin-top:12px">Nick (3-20 chars, not real name)</label>
+    <input id="createNickInput" class="LoginInput" placeholder="e.g. sky_walker_12" maxlength="20">
+
+    <label style="display:block;margin-top:12px">API Key (required, validated, never stored - session only)</label>
+    <input id="createApiInput" class="LoginInput" type="password" placeholder="Enter Meta API key - min 8 chars">
+
+    <label style="display:block;margin-top:12px">Age Range (required once, stored for user differentiation, not displayed publicly)</label>
+    <select id="createAgeSelect" class="RoleSelector">
+      <option value="">Select age range...</option>
+      <option value="13-15">13-15</option>
+      <option value="16-18">16-18</option>
+      <option value="18+">18+</option>
+    </select>
+
+    <div style="margin-top:12px;padding:12px;background:#1e293b;border-radius:8px;font-size:.85rem">
+      <input type="checkbox" id="createTermsCheck">
+      <label for="createTermsCheck"> I confirm I am 13+, nick is not my real name, I accept <a href="./PRIVACY.md" target="_blank">Privacy & Terms (global)</a> - asked only once.</label>
+    </div>
+    <button id="createUserBtn" class="PrimaryButton" style="width:100%;margin-top:12px">Create User</button>
+    <p id="createError" style="color:#ef4444;font-size:.85rem;display:none;margin-top:8px"></p>
+  </div>
+
+</div>
+<script src="./Public/Js/AppConfig.js"></script>
+<script src="./Public/Js/Models/UserRegistryModel.js"></script>
+<script src="./Public/Js/Models/NickSessionModel.js"></script>
+<script src="./Public/Js/Views/LoginView.js"></script>
+</body>
+</html>

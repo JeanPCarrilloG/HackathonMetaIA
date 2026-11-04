@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diary</title>
+<link rel="stylesheet" href="./Public/CSS/Styles.css">
+<link rel="icon" href="https://raw.githubusercontent.com/JeanPCarrilloG/JeanPCarrilloG/main/ICONS/icons8-blog.png">
+</head>
+<body>
+<header class="Header">
+  <h3>My Full Diary</h3>
+  <span id="userBadge" class="UserBadge">NICK</span>
+  <div class="HeaderActions">
+    <a href="./index.html" class="SecondaryButton" style="text-decoration:none">Back to Chat</a>
+    <a href="./dashboard.html" class="SecondaryButton" style="text-decoration:none">Dashboard</a>
+    <button id="logoutBtn" class="SecondaryButton" type="button">Logout</button>
+  </div>
+</header>
+
+<main class="Container">
+  <input id="searchBar" class="TextArea" placeholder="Search your diary by word..." style="min-height:40px">
+  
+  <div style="display:grid;grid-template-columns: 300px 1fr; gap:16px; margin-top:16px">
+    <div>
+      <h4>Calendar</h4>
+      <div id="calendarContainer"></div>
+      <div class="DateInputWrapper">
+        <div class="DateRow">
+          <input type="text" id="calendarDateInput" class="SecondaryButton" placeholder="YYYY/MM/DD" inputmode="numeric" maxlength="10">
+          <input type="date" id="nativeDateIcon" class="SecondaryButton" lang="en-CA">
+        </div>
+      </div>
+    </div>
+    <div>
+      <h4 id="selectedDateTitle">Diary Entries</h4>
+      <div id="diaryList" class="History"></div>
+    </div>
+  </div>
+</main>
+
+<div id="editModal" class="Modal" style="display:none">
+  <div class="ModalContent">
+    <h4>Edit Entry</h4>
+    <textarea id="editTextarea" class="TextArea" rows="5"></textarea>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button id="saveEditBtn" class="PrimaryButton" style="width:auto">Save Changes</button>
+      <button id="cancelEditBtn" class="SecondaryButton">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="./Public/Js/AppConfig.js"></script>
+<script src="./Public/Js/Models/UserRegistryModel.js"></script>
+<script src="./Public/Js/Models/NickSessionModel.js"></script>
+<script src="./Public/Js/Models/DateManagerModel.js"></script>
+<script src="./Public/Js/Models/DiaryModel.js"></script>
+<script src="./Public/Js/Views/CalendarView.js"></script>
+<script src="./Public/Js/Views/DiaryReaderView.js"></script>
+<script src="./Public/Js/Controllers/DiaryReaderController.js"></script>
+
+</body>
+</html>

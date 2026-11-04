@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellbeing Diary - Global</title>
+<link rel="stylesheet" href="./Public/CSS/Styles.css">
+<link rel="icon" href="https://raw.githubusercontent.com/JeanPCarrilloG/JeanPCarrilloG/main/ICONS/icons8-blog.png">
+</head>
+<body>
+<header class="Header">
+  <img src="https://raw.githubusercontent.com/JeanPCarrilloG/JeanPCarrilloG/main/ICONS/icons8-blog.png" class="Logo" alt="Logo">
+  <div class="Container">
+  <div class="HeaderText">
+    <h3>ANONYMOUS DIARY</h3>
+    <small id="currentDateLabel">Date: --</small>
+    <div><span id="userBadge" class="UserBadge">NICK</span></div>
+  </div>
+  </div>
+  <div class="Container">
+  <div class="HeaderActions">
+    <button id="prevDayBtn" class="SecondaryButton" type="button">Previous Day</button>
+    <button id="nextDayBtn" class="SecondaryButton" type="button">Next Day</button>
+    <button id="logoutBtn" class="SecondaryButton" type="button">Logout</button>
+    <a href="./diary.html" class="SecondaryButton" style="text-decoration:none">Read Diary</a>
+    <a href="./dashboard.html" class="SecondaryButton" style="text-decoration:none">Dashboard</a>
+  </div>
+  </div>
+</header>
+
+<div id="dailyProgress" class="DailyProgress"></div>
+
+<main class="Container">
+  <div id="history" class="History" aria-live="polite"></div>
+  <textarea id="prompt" class="TextArea" rows="3" placeholder="How was your day? Type here... Press Enter to send"></textarea>
+  <button id="btn" class="PrimaryButton" type="button">Send</button>
+</main>
+
+<!-- MODAL CONSEJO 5 ASPECTOS -->
+<div id="adviceModal" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h4 style="margin:0">5 Aspects Completed - Advice</h4>
+      <button id="closeAdviceX" class="close-x">✕</button>
+    </div>
+    <div id="adviceModalBody" class="modal-body">Advice text</div>
+    <div class="modal-footer">
+      <button id="continueWritingBtn" class="PrimaryButton" type="button">Continue Writing</button>
+      <button id="closeAdviceBtn" class="SecondaryButton" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<footer class="Footer"><p>Developed for: Meta Global AI Developer Hackathon</p></footer>
+
+<script src="./Public/Js/AppConfig.js"></script>
+<script src="./Public/Js/Models/UserRegistryModel.js"></script>
+<script src="./Public/Js/Models/NickSessionModel.js"></script>
+<script src="./Public/Js/Models/WellbeingPrefsModel.js"></script>
+<script src="./Public/Js/Models/DateManagerModel.js"></script>
+<script src="./Public/Js/Models/DiaryModel.js"></script>
+<script src="./Public/Js/Models/ChatModel.js"></script>
+<script src="./Public/Js/Models/WellbeingSignalModel.js"></script>
+<script src="./Public/Js/Models/QuestionGeneratorModel.js"></script>
+<script src="./Public/Js/Views/ChatView.js"></script>
+<script src="./Public/Js/Controllers/ChatController.js"></script>
+<script src="./Public/Js/Main.js"></script>
+<script src="./Public/Js/Views/IndexView.js"></script>
+</body>
+</html>

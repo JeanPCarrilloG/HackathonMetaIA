@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" href="./Public/CSS/Styles.css">
+</head>
+<body>
+<header class="Header">
+  <h3>Dashboard</h3>
+  <span id="userBadge" class="UserBadge">NICK</span>
+  <div class="HeaderActions">
+    <a href="./index.html" class="SecondaryButton" style="text-decoration:none">Diary</a>
+    <button id="logoutBtn" class="SecondaryButton">Logout</button>
+  </div>
+</header>
+<main class="Container">
+  <div style="padding:16px;background:#1a332a;border-radius:8px">
+    <h4>Global Compliant - Nick Only Display</h4>
+    <p style="font-size:.9rem">Only nick shown in UI. Age range stored locally at creation for user differentiation, not public. API key never stored, always requested at login, kept only in session storage.</p>
+  </div>
+
+  <div style="margin-top:12px">
+    <button id="termsBtn" class="SecondaryButton" type="button">Terms and Conditions</button>
+  </div>
+
+  <table style="width:100%;margin-top:16px" class="DashboardTable">
+    <thead><tr><th>Nick (display only)</th><th>Age Range (stored once at creation)</th><th>Days</th><th>Entries</th></tr></thead>
+    <tbody id="usersBody"></tbody>
+  </table>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
+    <div class="Header"><div><b id="totalDays">0</b><br><small>Days (only days written)</small></div></div>
+    <div class="Header"><div><b id="totalEntries">0</b><br><small>Entries (times session started)</small></div></div>
+  </div>
+
+  <h4 style="margin-top:24px">5 Aspects Advice</h4>
+  <p style="font-size:.9rem">When chronicle + emotional + relational + reflexive + projective are complete for a day, system provides supportive advice automatically. No diagnosis.</p>
+
+  <div style="margin-top:32px;padding:16px;background:#331a1a;border-radius:8px;border:1px solid #ef4444">
+    <h4 style="color:#ef4444;margin:0 0 8px 0">Danger Zone - Test Data</h4>
+    <p style="font-size:.85rem;color:#fca5a5">This will delete ALL test data: all users, all diaries, all passwords and return to login page. This action cannot be undone.</p>
+    <button id="deleteTestDataBtn" class="PrimaryButton" type="button" style="background:#ef4444;width:100%;margin-top:8px">Delete Test Data</button>
+  </div>
+</main>
+
+<!-- MODAL UNICO - 2 USOS: Terms y Delete Test Data -->
+<div id="appModal" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h4 id="modalTitle" style="margin:0">Title</h4>
+      <button id="closeX" class="close-x">✕</button>
+    </div>
+    <div id="modalBody" class="modal-body">Content</div>
+    <div class="modal-footer">
+      <button id="closeModalBtn" class="PrimaryButton" type="button">Close</button>
+      <button id="confirmModalBtn" class="PrimaryButton" type="button" style="display:none;background:#ef4444">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="./Public/Js/AppConfig.js"></script>
+<script src="./Public/Js/Models/UserRegistryModel.js"></script>
+<script src="./Public/Js/Models/NickSessionModel.js"></script>
+<script src="./Public/Js/Views/DashboardjsView.js"> </script>
+</body>
+</html>
